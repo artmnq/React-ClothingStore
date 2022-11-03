@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto;
+  h1 {
+    font-size: 100px;
+  }
+  span {
+    font-size: 18px;
+  }
+}

@@ -1,40 +1,23 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header';
-import Categories from './components/Categories';
-import Sort from './components/Sort';
-import ItemBlock from './components/ItemBlock';
-import Skeleton from './components/ItemBlock/Skeleton';
+import Home from './pages/Home';
+import notFound from './pages/NotFound';
 
 import './scss/app.scss';
+import NotFound from './pages/NotFound';
 
 function App() {
-  const [items, setItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    fetch('https://6362b47537f2167d6f6b31c3.mockapi.io/items')
-      .then((res) => res.json())
-      .then((arr) => {
-        setItems(arr);
-        setIsLoading(false);
-      });
-  }, []);
   return (
     <div className="wrapper">
       <Header />
       <div className="content">
         <div className="container">
-          <div className="content__top">
-            <Categories />
-            <Sort />
-          </div>
-          <h2 className="content__title">All clothing:</h2>
-          <div className="content__items">
-            {isLoading
-              ? [...new Array(8)].map((_, index) => <Skeleton key={index} />)
-              : items.map((obj) => <ItemBlock key={obj.id} {...obj} />)}
-          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </div>
