@@ -13,7 +13,8 @@ Stack what I used:
 
 - SCSS modules
 
-In the future I intend to use: 
-- Redux
+- Redux ToolKit 
+
+In the future I intend to use:
 - TypeScript
 - Axios
