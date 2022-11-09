@@ -11,10 +11,12 @@ Stack what I used:
 
 - React Paginate
 
+- Redux ToolKit
+
 - SCSS modules
 
-- Redux ToolKit 
+- AXIOS
 
-In the future I intend to use:
-- TypeScript
-- Axios
+- Lodash-debounce
+
+In the future I intend to change everything on a TypeScript.
