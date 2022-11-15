@@ -6,18 +6,15 @@ import Skeleton from '../components/ItemBlock/Skeleton';
 import ItemBlock from '../components/ItemBlock';
 import Pagination from '../components/Pagination';
 
-import { SearchContext } from '../App';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
-import { fetchItems } from '../redux/slices/itemsSlice';
+import { selectFilter, setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
+import { fetchItems, selectItemData } from '../redux/slices/itemsSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
 
-  const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
-  const { items, status } = useSelector((state) => state.items);
-
-  const { searchValue } = React.useContext(SearchContext);
+  const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
+  const { items, status } = useSelector(selectItemData);
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
