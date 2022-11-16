@@ -1,12 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import Skeleton from '../components/ItemBlock/Skeleton';
 import ItemBlock from '../components/ItemBlock';
 import Pagination from '../components/Pagination';
-
-import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter, setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
 import { fetchItems, selectItemData } from '../redux/slices/itemsSlice';
 
@@ -46,7 +46,11 @@ const Home = () => {
     getItems();
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const clothes = items.map((obj) => <ItemBlock key={obj.id} {...obj} />);
+  const clothes = items.map((obj) => (
+    <Link to={`/item/${obj.id}`} key={obj.id}>
+      <ItemBlock {...obj} />
+    </Link>
+  ));
   const skeletons = [...new Array(8)].map((_, index) => <Skeleton key={index} />);
 
   return (
