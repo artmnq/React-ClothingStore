@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const FullItem = () => {
-  const [item, setItem] = React.useState();
+const FullItem: React.FC = () => {
+  const [item, setItem] = React.useState<{ image: string; title: string; price: number }>();
   const { id } = useParams();
 
   React.useEffect(() => {
@@ -19,7 +19,11 @@ const FullItem = () => {
   }, []);
 
   if (!item) {
-    return 'Downloading....';
+    return (
+      <div className="container">
+        <b>Downloading....</b>
+      </div>
+    );
   }
 
   return (
