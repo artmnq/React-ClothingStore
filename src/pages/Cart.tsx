@@ -9,14 +9,21 @@ import CartItem from '../components/CartItem';
 import { clearItems, selectCart } from '../redux/slices/cartSlice';
 import CartEmpty from '../components/CartEmpty';
 
-const Cart = () => {
+const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
 
-  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount = items.reduce(
+    (sum: number, item: any) => sum + item.count,
+    0
+  );
 
   const onClickClear = () => {
-    if (window.confirm('Are you sure that you want to remove all items?')) {
+    if (
+      window.confirm(
+        'Are you sure that you want to remove all items?'
+      )
+    ) {
       dispatch(clearItems());
     }
   };
@@ -37,7 +44,7 @@ const Cart = () => {
           </div>
         </div>
         <div className="cart__items">
-          {items.map((item) => (
+          {items.map((item: any) => (
             <CartItem key={item.id} {...item} />
           ))}
         </div>
@@ -52,7 +59,10 @@ const Cart = () => {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-            <Link to="/" className="button button--outline button--add go-back-btn">
+            <Link
+              to="/"
+              className="button button--outline button--add go-back-btn"
+            >
               <img src={ArrowLeft} alt="arrow" />
               <span>Return back</span>
             </Link>

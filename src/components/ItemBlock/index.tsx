@@ -1,8 +1,26 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, selectCartItemById } from '../../redux/slices/cartSlice';
+import {
+  addItem,
+  selectCartItemById,
+} from '../../redux/slices/cartSlice';
 
-function ItemBlock({ id, title, price, image, sizes }) {
+type ItemBlockProps = {
+  id: string;
+  title: string;
+  price: number;
+  image: string;
+  sizes: string[];
+  rating: number;
+};
+
+const ItemBlock: React.FC<ItemBlockProps> = ({
+  id,
+  title,
+  price,
+  image,
+  sizes,
+}) => {
   const dispatch = useDispatch();
   const [activeSize, setActiveSize] = React.useState(0);
   const cartItem = useSelector(selectCartItemById(id));
@@ -39,7 +57,10 @@ function ItemBlock({ id, title, price, image, sizes }) {
         </div>
         <div className="item-block__bottom">
           <div className="item-block__price">{price} $</div>
-          <button onClick={onClickAdd} className="button button--outline button--add">
+          <button
+            onClick={onClickAdd}
+            className="button button--outline button--add"
+          >
             <svg
               width="12"
               height="12"
@@ -59,5 +80,5 @@ function ItemBlock({ id, title, price, image, sizes }) {
       </div>
     </div>
   );
-}
+};
 export default ItemBlock;

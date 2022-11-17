@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './NotFoundBlock.module.scss';
 import SadCat from '../../assets/img/sadCat.jpg';
 
-const NotFoundBlock = () => {
+const NotFoundBlock: React.FC = () => {
   return (
     <div className={styles.root}>
       <div>

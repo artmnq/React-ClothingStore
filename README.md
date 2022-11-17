@@ -2,7 +2,7 @@
 
 This pet-project in progress.
 
-Stack what I used: 
+Stack what I used:
 - ReactJS + hooks
 
 - React Router Axios
@@ -11,6 +11,8 @@ Stack what I used:
 
 - React Paginate
 
+- TypeScript
+
 - Redux ToolKit
 
 - SCSS modules
@@ -18,5 +20,3 @@ Stack what I used:
 - AXIOS
 
 - Lodash-debounce
-
-In the future I intend to change everything on a TypeScript.
