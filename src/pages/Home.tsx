@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../redux/store';
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
@@ -18,7 +19,7 @@ import {
 } from '../redux/slices/itemsSlice';
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);
@@ -39,13 +40,12 @@ const Home: React.FC = () => {
     const search = searchValue ? `&search=${searchValue}` : '';
 
     dispatch(
-      // @ts-ignore
       fetchItems({
         sortBy,
         order,
         category,
         search,
-        currentPage,
+        currentPage: String(currentPage),
       })
     );
     window.scrollTo(0, 0);
