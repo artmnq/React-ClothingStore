@@ -26,7 +26,9 @@ const Search: React.FC = () => {
     []
   );
 
-  const onChangeInput = (event: any) => {
+  const onChangeInput = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };
@@ -47,7 +49,7 @@ const Search: React.FC = () => {
       />
       {value && (
         <img
-          onClick={() => onClickClear()}
+          onClick={onClickClear}
           className={styles.clearIcon}
           src={ClearSearch}
           alt="clear"
