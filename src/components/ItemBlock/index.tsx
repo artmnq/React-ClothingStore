@@ -5,6 +5,7 @@ import {
   CartItem,
   selectCartItemById,
 } from '../../redux/slices/cartSlice';
+import { Link } from 'react-router-dom';
 
 type ItemBlockProps = {
   id: string;
@@ -42,8 +43,12 @@ const ItemBlock: React.FC<ItemBlockProps> = ({
   return (
     <div className="item-block-wrapper">
       <div className="item-block">
-        <img className="item-block__image" src={image} alt="item" />
-        <h4 className="item-block__title">{title}</h4>
+        <Link to={`/item/${id}`} key={id}>
+          <img className="item-block__image" src={image} alt="item" />
+        </Link>
+        <Link to={`/item/${id}`} key={id}>
+          <h4 className="item-block__title">{title}</h4>
+        </Link>
         <div className="item-block__selector">
           <ul>
             {sizes.map((size, i) => (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../redux/store';
 
@@ -55,11 +54,7 @@ const Home: React.FC = () => {
     getItems();
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const clothes = items.map((obj: any) => (
-    <Link to={`/item/${obj.id}`} key={obj.id}>
-      <ItemBlock {...obj} />
-    </Link>
-  ));
+  const clothes = items.map((obj: any) => <ItemBlock {...obj} />);
   const skeletons = [...new Array(8)].map((_, index) => (
     <Skeleton key={index} />
   ));
