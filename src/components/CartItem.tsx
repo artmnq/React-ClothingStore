@@ -42,7 +42,7 @@ const CartItemBlock: React.FC<CartItemProps> = ({
       <img className="item-block__image" src={image} alt="Item" />
       <div className="cart__item-info">
         <h3>{title}</h3>
-        <p>{size}</p>
+        <p>Size: {size}</p>
       </div>
       <div className="cart__item-count">
         <button

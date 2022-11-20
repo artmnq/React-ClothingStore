@@ -15,13 +15,13 @@ const cartSlice = createSlice({
       );
       if (findItem) {
         findItem.count++;
+        state.totalPrice = calcTotalPrice(state.items);
       } else {
         state.items.push({
           ...action.payload,
           count: 1,
         });
       }
-
       state.totalPrice = calcTotalPrice(state.items);
     },
 
@@ -30,14 +30,17 @@ const cartSlice = createSlice({
         (obj) => obj.id === action.payload
       );
       if (findItem) {
+        state.totalPrice = calcTotalPrice(state.items);
         findItem.count--;
       }
+      state.totalPrice = calcTotalPrice(state.items);
     },
 
     removeItem(state, action: PayloadAction<string>) {
       state.items = state.items.filter(
         (obj) => obj.id !== action.payload
       );
+      state.totalPrice = calcTotalPrice(state.items);
     },
 
     clearItems(state) {

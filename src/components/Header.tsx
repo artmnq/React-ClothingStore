@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import { selectCart } from '../redux/cart/selectors';
 import Search from './Search';
 import logoMain from '../assets/img/mainlogo.jpg';
 
-function Header() {
+const Header: React.FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const location = useLocation();
   const isMounted = React.useRef(false);
-
   const totalCount = items.reduce(
     (sum: number, item: any) => sum + item.count,
     0
@@ -29,7 +27,7 @@ function Header() {
       <div className="container">
         <Link to="/">
           <div className="header__logo">
-            <img src={logoMain} width={50} height={50} alt="Logo" />
+            <img src={logoMain} width={55} height={55} alt="Logo" />
             <div>
               <h1>React Clothing Store</h1>
               <p>Designer clothing for men</p>
@@ -78,6 +76,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
