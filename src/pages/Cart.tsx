@@ -61,7 +61,7 @@ const Cart: React.FC = () => {
           </div>
           <div className="cart__bottom-buttons">
             <Link
-              to="/"
+              to="/React-ClothingStore"
               className="button button--outline button--add go-back-btn"
             >
               <img src={ArrowLeft} alt="arrow" />

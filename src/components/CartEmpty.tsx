@@ -16,7 +16,10 @@ const CartEmpty: React.FC = () => {
           For the order please return on Main page.
         </p>
         <img src={CartEmptyImg} alt="Empty cart" />
-        <Link to="/" className="button button--black">
+        <Link
+          to="/React-ClothingStore"
+          className="button button--black"
+        >
           <span>Return back</span>
         </Link>
       </div>
