@@ -24,9 +24,9 @@ const Home: React.FC = () => {
     useSelector(selectFilter);
   const { items, status } = useSelector(selectItemData);
 
-  const onChangeCategory = (id: number) => {
+  const onChangeCategory = React.useCallback((id: number) => {
     dispatch(setCategoryId(id));
-  };
+  }, []);
 
   const onChangePage = (number: number) => {
     dispatch(setCurrentPage(number));
@@ -54,7 +54,9 @@ const Home: React.FC = () => {
     getItems();
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const clothes = items.map((obj: any) => <ItemBlock {...obj} />);
+  const clothes = items.map((obj: any) => (
+    <ItemBlock key={obj.id} {...obj} />
+  ));
   const skeletons = [...new Array(8)].map((_, index) => (
     <Skeleton key={index} />
   ));
@@ -67,7 +69,7 @@ const Home: React.FC = () => {
             value={categoryId}
             onChangeCategory={onChangeCategory}
           />
-          <Sort />
+          <Sort value={sort} />
         </div>
         <h2 className="content__title">All clothing:</h2>
         {status === 'error' ? (
