@@ -4,6 +4,9 @@
   ul {
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: 1070px) {
+      width: 80%;
+    }
 
     li {
       background-color: #f9f9f9;
