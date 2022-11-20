@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-ClothingStore/static/css/main.13ec1697.css",
-    "main.js": "/React-ClothingStore/static/js/main.43f55267.js",
+    "main.js": "/React-ClothingStore/static/js/main.02b3a506.js",
     "static/media/mainlogo.jpg": "/React-ClothingStore/static/media/mainlogo.458eaf62cecaa404b962.jpg",
     "static/media/sadCat.jpg": "/React-ClothingStore/static/media/sadCat.bb341ddaf2ffdb394eca.jpg",
     "static/media/empty-cart.png": "/React-ClothingStore/static/media/empty-cart.db905d1f4b063162f25b.png",
@@ -12,10 +12,10 @@
     "static/media/clear_search.svg": "/React-ClothingStore/static/media/clear_search.2001e956d267bc9b1a2349ee0a8ee521.svg",
     "static/media/grey-arrow-left.svg": "/React-ClothingStore/static/media/grey-arrow-left.fc29ec73901b6f8218c91a0d69592416.svg",
     "main.13ec1697.css.map": "/React-ClothingStore/static/css/main.13ec1697.css.map",
-    "main.43f55267.js.map": "/React-ClothingStore/static/js/main.43f55267.js.map"
+    "main.02b3a506.js.map": "/React-ClothingStore/static/js/main.02b3a506.js.map"
   },
   "entrypoints": [
     "static/css/main.13ec1697.css",
-    "static/js/main.43f55267.js"
+    "static/js/main.02b3a506.js"
   ]
 }
