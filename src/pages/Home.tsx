@@ -7,15 +7,10 @@ import Sort from '../components/Sort';
 import Skeleton from '../components/ItemBlock/Skeleton';
 import ItemBlock from '../components/ItemBlock';
 import Pagination from '../components/Pagination';
-import {
-  selectFilter,
-  setCategoryId,
-  setCurrentPage,
-} from '../redux/slices/filterSlice';
-import {
-  fetchItems,
-  selectItemData,
-} from '../redux/slices/itemsSlice';
+import { setCategoryId, setCurrentPage } from '../redux/filter/slice';
+import { selectFilter } from '../redux/filter/selectors';
+import { fetchItems } from '../redux/item/asyncActions';
+import { selectItemData } from '../redux/item/selectors';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();

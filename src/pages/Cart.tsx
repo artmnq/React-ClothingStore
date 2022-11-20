@@ -6,7 +6,8 @@ import cartImg from '../assets/img/cart.svg';
 import trash from '../assets/img/trash.svg';
 import ArrowLeft from '../assets/img/grey-arrow-left.svg';
 import CartItem from '../components/CartItem';
-import { clearItems, selectCart } from '../redux/slices/cartSlice';
+import { clearItems } from '../redux/cart/slice';
+import { selectCart } from '../redux/cart/selectors';
 import CartEmpty from '../components/CartEmpty';
 
 const Cart: React.FC = () => {
